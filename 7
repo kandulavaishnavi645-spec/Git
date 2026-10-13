@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+class Student
+{
+    int roll;
+    static int count;
+
+public:
+    void accept()
+    {
+        cout << "Enter roll number: ";
+        cin >> roll;
+        count++;
+    }
+
+    void display()
+    {
+        cout << "Roll Number = " << roll << endl;
+    }
+
+    static void showCount()
+    {
+        cout << "Total Students = " << count;
+    }
+};
+
+int Student::count = 0;
+
+int main()
+{
+    Student s1, s2;
+
+    s1.accept();
+    s2.accept();
+
+    s1.display();
+    s2.display();
+
+    Student::showCount();
+
+    return 0;
+}
